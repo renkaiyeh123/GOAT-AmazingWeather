@@ -20,6 +20,7 @@
 		49DC156323711AD300EDB7DF /* default.png in Resources */ = {isa = PBXBuildFile; fileRef = 49DC156223711AD300EDB7DF /* default.png */; };
 		49DC156523711C2900EDB7DF /* detailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DC156423711C2900EDB7DF /* detailViewController.swift */; };
 		49DC15672371280100EDB7DF /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DC15662371280100EDB7DF /* Constants.swift */; };
+		49DC156923712BEB00EDB7DF /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49DC156823712BEB00EDB7DF /* Alamofire.framework */; };
 		49E6835F2370FF0000675470 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49E6835E2370FF0000675470 /* AppDelegate.swift */; };
 		49E683612370FF0000675470 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49E683602370FF0000675470 /* SceneDelegate.swift */; };
 		49E683632370FF0000675470 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49E683622370FF0000675470 /* ViewController.swift */; };
@@ -45,6 +46,7 @@
 		49DC156223711AD300EDB7DF /* default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = default.png; sourceTree = "<group>"; };
 		49DC156423711C2900EDB7DF /* detailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = detailViewController.swift; sourceTree = "<group>"; };
 		49DC15662371280100EDB7DF /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		49DC156823712BEB00EDB7DF /* Alamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Alamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		49E6835B2370FF0000675470 /* GOAT-AmazingWeather.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "GOAT-AmazingWeather.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		49E6835E2370FF0000675470 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		49E683602370FF0000675470 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -63,6 +65,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				49DC156923712BEB00EDB7DF /* Alamofire.framework in Frameworks */,
 				4F79CF83E708DBEEA4349040 /* Pods_GOAT_AmazingWeather.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -136,6 +139,7 @@
 		A13D5B72A4610BEA067FFFC3 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				49DC156823712BEB00EDB7DF /* Alamofire.framework */,
 				01EEC25E3EC9DD054BB7F4AE /* Pods_GOAT_AmazingWeather.framework */,
 			);
 			name = Frameworks;
