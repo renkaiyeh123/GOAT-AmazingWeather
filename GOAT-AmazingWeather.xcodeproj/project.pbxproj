@@ -13,9 +13,12 @@
 		49E683662370FF0000675470 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 49E683642370FF0000675470 /* Main.storyboard */; };
 		49E683682370FF0100675470 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 49E683672370FF0100675470 /* Assets.xcassets */; };
 		49E6836B2370FF0100675470 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 49E683692370FF0100675470 /* LaunchScreen.storyboard */; };
+		49E683732371003200675470 /* mainWeatherTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49E683722371003200675470 /* mainWeatherTableViewCell.swift */; };
+		4F79CF83E708DBEEA4349040 /* Pods_GOAT_AmazingWeather.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01EEC25E3EC9DD054BB7F4AE /* Pods_GOAT_AmazingWeather.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		01EEC25E3EC9DD054BB7F4AE /* Pods_GOAT_AmazingWeather.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GOAT_AmazingWeather.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		49E6835B2370FF0000675470 /* GOAT-AmazingWeather.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "GOAT-AmazingWeather.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		49E6835E2370FF0000675470 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		49E683602370FF0000675470 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -24,6 +27,9 @@
 		49E683672370FF0100675470 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		49E6836A2370FF0100675470 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		49E6836C2370FF0100675470 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		49E683722371003200675470 /* mainWeatherTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mainWeatherTableViewCell.swift; sourceTree = "<group>"; };
+		5ACF682F591130FC8694522F /* Pods-GOAT-AmazingWeather.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GOAT-AmazingWeather.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GOAT-AmazingWeather/Pods-GOAT-AmazingWeather.debug.xcconfig"; sourceTree = "<group>"; };
+		64D8DDE04205F272AD41D957 /* Pods-GOAT-AmazingWeather.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GOAT-AmazingWeather.release.xcconfig"; path = "Pods/Target Support Files/Pods-GOAT-AmazingWeather/Pods-GOAT-AmazingWeather.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,17 +37,29 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4F79CF83E708DBEEA4349040 /* Pods_GOAT_AmazingWeather.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0AC59909995559F345ACD13F /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				5ACF682F591130FC8694522F /* Pods-GOAT-AmazingWeather.debug.xcconfig */,
+				64D8DDE04205F272AD41D957 /* Pods-GOAT-AmazingWeather.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		49E683522370FF0000675470 = {
 			isa = PBXGroup;
 			children = (
 				49E6835D2370FF0000675470 /* GOAT-AmazingWeather */,
 				49E6835C2370FF0000675470 /* Products */,
+				0AC59909995559F345ACD13F /* Pods */,
+				A13D5B72A4610BEA067FFFC3 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -58,6 +76,7 @@
 			children = (
 				49E6835E2370FF0000675470 /* AppDelegate.swift */,
 				49E683602370FF0000675470 /* SceneDelegate.swift */,
+				49E683722371003200675470 /* mainWeatherTableViewCell.swift */,
 				49E683622370FF0000675470 /* ViewController.swift */,
 				49E683642370FF0000675470 /* Main.storyboard */,
 				49E683672370FF0100675470 /* Assets.xcassets */,
@@ -67,6 +86,14 @@
 			path = "GOAT-AmazingWeather";
 			sourceTree = "<group>";
 		};
+		A13D5B72A4610BEA067FFFC3 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				01EEC25E3EC9DD054BB7F4AE /* Pods_GOAT_AmazingWeather.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -74,9 +101,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 49E6836F2370FF0100675470 /* Build configuration list for PBXNativeTarget "GOAT-AmazingWeather" */;
 			buildPhases = (
+				718497D2AC327214633DDEFF /* [CP] Check Pods Manifest.lock */,
 				49E683572370FF0000675470 /* Sources */,
 				49E683582370FF0000675470 /* Frameworks */,
 				49E683592370FF0000675470 /* Resources */,
+				03CD8C2DD5F32034245E6DE6 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -133,12 +162,52 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		03CD8C2DD5F32034245E6DE6 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-GOAT-AmazingWeather/Pods-GOAT-AmazingWeather-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-GOAT-AmazingWeather/Pods-GOAT-AmazingWeather-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		718497D2AC327214633DDEFF /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-GOAT-AmazingWeather-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		49E683572370FF0000675470 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				49E683632370FF0000675470 /* ViewController.swift in Sources */,
+				49E683732371003200675470 /* mainWeatherTableViewCell.swift in Sources */,
 				49E6835F2370FF0000675470 /* AppDelegate.swift in Sources */,
 				49E683612370FF0000675470 /* SceneDelegate.swift in Sources */,
 			);
@@ -282,6 +351,7 @@
 		};
 		49E683702370FF0100675470 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5ACF682F591130FC8694522F /* Pods-GOAT-AmazingWeather.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -300,6 +370,7 @@
 		};
 		49E683712370FF0100675470 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 64D8DDE04205F272AD41D957 /* Pods-GOAT-AmazingWeather.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
