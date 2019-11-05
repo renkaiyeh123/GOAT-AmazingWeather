@@ -15,17 +15,59 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="wNl-3X-Ftg">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="64" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="wNl-3X-Ftg">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" id="2la-fA-J2i" customClass="mainWeatherTableViewCell" customModule="GOAT_AmazingWeather" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" rowHeight="64" id="2la-fA-J2i" customClass="mainWeatherTableViewCell" customModule="GOAT_AmazingWeather" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="64"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="2la-fA-J2i" id="MlO-eO-UUr">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="64"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="HtW-E5-iv8">
+                                                    <rect key="frame" x="20" y="20" width="24" height="24"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="24" id="NNC-t3-vJc"/>
+                                                        <constraint firstAttribute="width" constant="24" id="vjQ-bH-T6l"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Monday" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AdB-5p-Hfr">
+                                                    <rect key="frame" x="60" y="21" width="100" height="22"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="100" id="Dvy-XA-HNx"/>
+                                                        <constraint firstAttribute="height" constant="22" id="bd8-62-lOR"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="H: 100 L: 56" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bDM-c2-tWg">
+                                                    <rect key="frame" x="168" y="21.5" width="226" height="21"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="21" id="2i4-hl-Vum"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="bDM-c2-tWg" firstAttribute="centerY" secondItem="MlO-eO-UUr" secondAttribute="centerY" id="0aD-BB-7LR"/>
+                                                <constraint firstItem="HtW-E5-iv8" firstAttribute="leading" secondItem="MlO-eO-UUr" secondAttribute="leading" constant="20" id="0bz-ys-ewY"/>
+                                                <constraint firstItem="AdB-5p-Hfr" firstAttribute="centerY" secondItem="MlO-eO-UUr" secondAttribute="centerY" id="6Uy-Uy-Z2C"/>
+                                                <constraint firstItem="AdB-5p-Hfr" firstAttribute="leading" secondItem="HtW-E5-iv8" secondAttribute="trailing" constant="16" id="Adx-N8-x9E"/>
+                                                <constraint firstItem="bDM-c2-tWg" firstAttribute="leading" secondItem="AdB-5p-Hfr" secondAttribute="trailing" constant="8" id="DLV-SN-2Z2"/>
+                                                <constraint firstAttribute="trailing" secondItem="bDM-c2-tWg" secondAttribute="trailing" constant="20" id="g8L-z5-s1S"/>
+                                                <constraint firstItem="HtW-E5-iv8" firstAttribute="centerY" secondItem="MlO-eO-UUr" secondAttribute="centerY" id="t4z-ZQ-7PR"/>
+                                            </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="dayOfTheWeek" destination="AdB-5p-Hfr" id="W8L-Cl-2K6"/>
+                                            <outlet property="highLowLabel" destination="bDM-c2-tWg" id="dXg-io-HFo"/>
+                                            <outlet property="weatherImg" destination="HtW-E5-iv8" id="waE-5G-u6j"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
