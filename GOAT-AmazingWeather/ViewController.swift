@@ -34,8 +34,9 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         }
     }
     
+    var selectedRowIndex = Int()
     let locationManager = CLLocationManager()
-    var highLowTemperatures = [(day: String, high: Int, low: Int)]()
+    var highLowTemperatures = [(day: String, summary: String, icon: String, high: Int, low: Int)]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -55,10 +56,17 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! mainWeatherTableViewCell
         
+        cell.weatherImg.image = UIImage(named: highLowTemperatures[indexPath.row].icon)
         cell.dayOfTheWeek.text = highLowTemperatures[indexPath.row].day
         cell.highLowLabel.text = "H: \(highLowTemperatures[indexPath.row].high)  |  L: \(highLowTemperatures[indexPath.row].low)"
         
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        selectedRowIndex = indexPath.row
+        self.performSegue(withIdentifier: "detail", sender: self)
     }
     
     // MARK: Request & Parse JSON
@@ -96,9 +104,19 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
                     
                     increment += 1
                     
+                    var weatherIcon = String()
+                    var summary = String()
                     
                     var highs = Int()
                     var lows = Int()
+                    
+                    if let icon = dailyWeather["icon"] as? String {
+                        weatherIcon = icon + ".png"
+                    }
+                    
+                    if let sum = dailyWeather["summary"] as? String {
+                        summary = sum
+                    }
                     
                     if let tempHigh = dailyWeather["temperatureMax"] as? Double {
                         highs = Int(round(tempHigh))
@@ -108,7 +126,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
                         lows = Int(round(tempLow))
                     }
                     
-                    highLowTemperatures.append((day: dayOfWeather, high: highs, low: lows))
+                    highLowTemperatures.append((day: dayOfWeather, summary: summary, icon: weatherIcon, high: highs, low: lows))
                 }
                 
                 tableView.reloadData()
@@ -121,6 +139,18 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         let dismissAction = UIAlertAction(title: "OK", style: .default, handler: nil)
         alert.addAction(dismissAction)
         self.present(alert, animated: true, completion: nil)
+    }
+    
+    // MARK: - Navigation
+
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "detail" {
+            let info = segue.destination as! detailViewController
+            info.dayOfTheWeek = highLowTemperatures[selectedRowIndex].day
+            info.highLow = "H: \(highLowTemperatures[selectedRowIndex].high)  |  L: \(highLowTemperatures[selectedRowIndex].low)"
+            info.iconStr = highLowTemperatures[selectedRowIndex].icon
+            info.daySummary = highLowTemperatures[selectedRowIndex].summary
+        }
     }
 }
 

@@ -7,7 +7,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Amazing Weather-->
+        <!--GOAT Weather-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="GOAT_AmazingWeather" customModuleProvider="target" sceneMemberID="viewController">
@@ -26,7 +26,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="64"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="HtW-E5-iv8">
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="default.png" translatesAutoresizingMaskIntoConstraints="NO" id="HtW-E5-iv8">
                                                     <rect key="frame" x="20" y="20" width="24" height="24"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="24" id="NNC-t3-vJc"/>
@@ -81,7 +81,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Amazing Weather" id="48i-uK-nz3">
+                    <navigationItem key="navigationItem" title="GOAT Weather" id="48i-uK-nz3">
                         <barButtonItem key="rightBarButtonItem" image="sun.max.fill" catalog="system" id="4Ip-zL-cpB">
                             <connections>
                                 <action selector="requestLocationPermissions:" destination="BYZ-38-t0r" id="et9-BG-mHH"/>
@@ -90,11 +90,83 @@
                     </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="wNl-3X-Ftg" id="Ho7-QG-1Lx"/>
+                        <segue destination="egM-kZ-YO1" kind="show" identifier="detail" id="SdJ-oy-zVz"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1047.8260869565217" y="116.51785714285714"/>
+        </scene>
+        <!--Details-->
+        <scene sceneID="sHR-Sb-4bf">
+            <objects>
+                <viewController id="egM-kZ-YO1" customClass="detailViewController" customModule="GOAT_AmazingWeather" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Xva-Rg-vYv">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="default.png" translatesAutoresizingMaskIntoConstraints="NO" id="ATb-Ne-pyl">
+                                <rect key="frame" x="167" y="132" width="80" height="80"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="80" id="UzV-73-zVT"/>
+                                    <constraint firstAttribute="height" constant="80" id="eiN-OY-ofA"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TUESDAY" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gr2-ul-yvt">
+                                <rect key="frame" x="20" y="223" width="374" height="54"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="54" id="mh9-4O-Ob9"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="40"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mixed precipitation throughout the week, with temperatures falling to 39°F on Saturday. another thing is" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3aj-3W-SdO">
+                                <rect key="frame" x="20" y="314" width="374" height="64"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="64" id="cwb-eR-jzv"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="H: 100   |   L: 50" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qyl-vo-ArQ">
+                                <rect key="frame" x="20" y="285" width="374" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="VUr-4c-Mmt"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="ATb-Ne-pyl" firstAttribute="top" secondItem="v9H-Jn-McT" secondAttribute="top" constant="44" id="2h7-lh-Wr3"/>
+                            <constraint firstItem="3aj-3W-SdO" firstAttribute="top" secondItem="qyl-vo-ArQ" secondAttribute="bottom" constant="8" id="NEO-w0-Al3"/>
+                            <constraint firstItem="qyl-vo-ArQ" firstAttribute="leading" secondItem="v9H-Jn-McT" secondAttribute="leading" constant="20" id="P2m-AI-2eH"/>
+                            <constraint firstItem="ATb-Ne-pyl" firstAttribute="centerX" secondItem="Xva-Rg-vYv" secondAttribute="centerX" id="RWq-5R-9Nu"/>
+                            <constraint firstItem="qyl-vo-ArQ" firstAttribute="top" secondItem="gr2-ul-yvt" secondAttribute="bottom" constant="8" id="SXX-9t-8xb"/>
+                            <constraint firstItem="v9H-Jn-McT" firstAttribute="trailing" secondItem="gr2-ul-yvt" secondAttribute="trailing" constant="20" id="eaP-IJ-yWM"/>
+                            <constraint firstItem="gr2-ul-yvt" firstAttribute="leading" secondItem="v9H-Jn-McT" secondAttribute="leading" constant="20" id="iVf-Uf-1KH"/>
+                            <constraint firstItem="gr2-ul-yvt" firstAttribute="top" secondItem="ATb-Ne-pyl" secondAttribute="bottom" constant="11" id="nP9-1H-M3n"/>
+                            <constraint firstItem="v9H-Jn-McT" firstAttribute="trailing" secondItem="3aj-3W-SdO" secondAttribute="trailing" constant="20" id="pga-j6-ioL"/>
+                            <constraint firstItem="3aj-3W-SdO" firstAttribute="leading" secondItem="v9H-Jn-McT" secondAttribute="leading" constant="20" id="ssU-oc-iQL"/>
+                            <constraint firstItem="v9H-Jn-McT" firstAttribute="trailing" secondItem="qyl-vo-ArQ" secondAttribute="trailing" constant="20" id="xO0-jx-rEz"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="v9H-Jn-McT"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Details" id="r6W-n8-Wdd"/>
+                    <connections>
+                        <outlet property="dayOfTheWeekLabel" destination="gr2-ul-yvt" id="SaV-lx-T39"/>
+                        <outlet property="daySummaryLabel" destination="3aj-3W-SdO" id="XJ0-WY-7SZ"/>
+                        <outlet property="highLowLabel" destination="qyl-vo-ArQ" id="s7N-BX-ode"/>
+                        <outlet property="weatherIconImgView" destination="ATb-Ne-pyl" id="A6Q-9b-Nka"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mpZ-jw-LxG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1818.840579710145" y="115.84821428571428"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="ylc-AJ-b5C">
@@ -116,6 +188,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="default.png" width="64" height="64"/>
         <image name="sun.max.fill" catalog="system" width="64" height="62"/>
     </resources>
 </document>
