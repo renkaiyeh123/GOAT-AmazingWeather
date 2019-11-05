@@ -26,17 +26,12 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         }
     }
     
-    func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
-        if (status == CLAuthorizationStatus.authorizedWhenInUse) {
-            if let coordinates = manager.location?.coordinate {
-                getWeatherData(coordinates)
-            }
-        }
-    }
-    
     var selectedRowIndex = Int()
     let locationManager = CLLocationManager()
     var highLowTemperatures = [(day: String, summary: String, icon: String, high: Int, low: Int)]()
+    
+    // CONSTANTS
+    let API_KEY = API_KEY_DARK_SKY
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -46,6 +41,15 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         
         locationManager.delegate = self
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
+    }
+    
+    // MARK: LocationMGR Callback
+    func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
+        if (status == CLAuthorizationStatus.authorizedWhenInUse) {
+            if let coordinates = manager.location?.coordinate {
+                getWeatherData(coordinates)
+            }
+        }
     }
 
     // MARK: TableView Delegates
@@ -74,7 +78,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         let userLatitude = coordinates.latitude
         let userLongitude = coordinates.longitude
         
-        let darkSkyURL = "https://api.darksky.net/forecast/f68ef4bc753bae8ef3e8ce9b8f337a40/\(userLatitude),\(userLongitude)"
+        let darkSkyURL = "https://api.darksky.net/forecast/\(API_KEY)/\(userLatitude),\(userLongitude)"
         
         AF.request(darkSkyURL)
             .validate(statusCode: 200..<300).responseJSON { (weatherReport) in
@@ -93,8 +97,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         if let daily = json["daily"] as? [String : Any] {
             if let data = daily["data"] as? [[String : Any]] {
                 
-                var increment = 0
-                for dailyWeather in data {
+                var increment = 0 // Use increment to get upcoming days
+                for dailyWeather in data { // Parse through data
                     var dayOfWeather = String()
                     
                     let dayOfWeek = Calendar.current.date(byAdding: .day, value: increment, to: Date())
@@ -142,7 +146,6 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
     
     // MARK: - Navigation
-
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "detail" {
             let info = segue.destination as! detailViewController
@@ -155,7 +158,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
 }
 
 // MARK: Date Ext.
-extension Date {
+extension Date { // Date Formatter to get Day of Week
     func dayOfWeek() -> String? {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "EEEE"
